@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: loan-track
+    runtime: node
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+        placeholder: "mongodb+srv://<username>:<password>@cluster.mongodb.net/loan_tracker"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GROQ_API_KEY
+        sync: false
+        placeholder: "gsk_..."
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
