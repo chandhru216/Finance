@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const cron = require('node-cron');
+const path = require('path');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 
@@ -27,6 +28,18 @@ app.use('/api/ai',            require('./routes/ai'));   // ← AI chatbot route
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Loan Tracker API is running' });
 });
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+  // Any route that doesn't match API routes should load index.html
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
+  });
+}
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
