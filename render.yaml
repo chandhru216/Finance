@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: loan-track
+    name: loan-track-backend
     runtime: node
-    buildCommand: npm run build
+    rootDir: backend
+    buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
