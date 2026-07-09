@@ -1,7 +1,7 @@
 # 🏦 LoanTrack — Loan Utilization Tracker
 
-🌐 **Live Demo (Vercel):** [https://your-app-name.vercel.app](https://your-app-name.vercel.app)  
-⚙️ **Backend API (Render):** [https://your-backend-name.onrender.com](https://your-backend-name.onrender.com)
+🌐 **Live Demo (Vercel):** [https://loan-track-frontend.vercel.app](https://loan-track-frontend.vercel.app)  
+⚙️ **Backend API (Render):** [https://loan-track-backend.onrender.com](https://loan-track-backend.onrender.com)
 
 A full-stack web application to manage, track, and visualize loan utilization with a modern dark-mode UI.
 
